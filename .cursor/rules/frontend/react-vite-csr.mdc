@@ -1,51 +1,64 @@
-# Regras de Desenvolvimento: React.js + Vite + CSR
+---
+description: Regras de Desenvolvimento: React.js + Vite + CSR
+globs: *.js,*.jsx,*.ts,*.tsx
+alwaysApply: false
+---
 
 ## 1. Estrutura de Projeto
+
 - Mantenha uma estrutura de pastas clara: `src/components`, `src/pages`, `src/hooks`, `src/services`, `src/utils`.
 - Separe componentes reutilizáveis de páginas.
 - Utilize arquivos `.env` para variáveis de ambiente.
 
 ## 2. Boas Práticas de Código
+
 - Utilize componentes funcionais e hooks (`useState`, `useEffect`, `useContext`, etc.).
 - Prefira `useCallback` e `useMemo` para otimização de performance.
 - Evite lógica complexa dentro dos componentes; extraia para hooks ou funções utilitárias.
 - Nomeie arquivos e componentes em PascalCase.
 
 ## 3. Vite
+
 - Use o plugin oficial do React para Vite (`@vitejs/plugin-react`).
 - Configure o HMR (Hot Module Replacement) para desenvolvimento rápido.
 - Utilize aliases no Vite (`@/components`, etc.) para facilitar imports.
 - Configure o build para gerar bundles otimizados.
 
 ## 4. Client-Side Rendering (CSR)
+
 - Garanta que toda a lógica de renderização dependa apenas do lado do cliente.
 - Evite dependências de APIs do Node.js ou do ambiente de servidor.
 - Utilize rotas com React Router ou similar, sempre em modo CSR.
 - Carregue dados via hooks (`useEffect`) após o mount do componente.
 
 ## 5. Performance
+
 - Implemente lazy loading com `React.lazy` e `Suspense` para dividir o bundle.
 - Utilize memoização de componentes (`React.memo`) quando necessário.
 - Prefira listas virtuais para grandes volumes de dados (ex: `react-window`).
 - Otimize imagens e assets estáticos.
 
 ## 6. Testes
+
 - Escreva testes unitários para componentes e hooks (ex: Jest + React Testing Library).
 - Cubra casos de borda e interações do usuário.
 - Automatize testes em pull requests.
 
 ## 7. Acessibilidade
+
 - Utilize sempre atributos `aria-*` e roles semânticos.
 - Garanta navegação por teclado e contraste adequado.
 - Teste com ferramentas como Lighthouse e axe.
 
 ## 8. Convenções para Times
+
 - Padronize formatação com Prettier e lint com ESLint.
 - Use commits semânticos e PRs descritivos.
 - Documente componentes e hooks principais (JSDoc ou README).
 - Faça code review obrigatório para todas as features.
 
 ## 9. Dicas Extras
+
 - Utilize o modo de desenvolvimento do Vite para feedback rápido.
 - Centralize configurações sensíveis em `.env` e nunca faça commit desses arquivos.
-- Atualize dependências regularmente e monitore vulnerabilidades. 
+- Atualize dependências regularmente e monitore vulnerabilidades.
